@@ -1,0 +1,28 @@
+{% extends "index.html" %}
+{% block content %}
+
+<div class="container my-5">
+    <div class="row">
+        <div class="card" style="width: 50vw;">
+            <div class="card-body">
+                <h5 class="card-title text-center"><strong>Chronic Kidney Disease Detection Report</strong></h5>
+                <p class="card-text text-capitalize my-5"> 
+                    <strong>
+                        {% if pred == 1 %}
+                                prediction is {{pred}} You have ckd
+                        {% endif %}
+                        
+                        {% if pred == 0 %}
+                                prediction is {{pred}} You dont have ckd
+                        {% else %}
+                                Please enter valid Data
+                        {% endif %} 
+                    </strong>
+                </p>
+                <a href="/about" class="btn btn-primary">Learn more about CKD</a>
+            </div>
+            </div>
+    </div>
+</div>
+
+{% endblock %}

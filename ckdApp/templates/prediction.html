@@ -1,0 +1,161 @@
+{% extends "index.html" %}
+{% block content %}
+
+<div class="container my-5">
+    <div class="card center" style="width: 70vw;">
+        <div class="card-body">
+            <div class="row"  style="margin-bottom: 10px;">
+                <div class="col-md-1"></div>
+                <div class="col-md-10">
+                    <center class="my-4"><h1>Chronic Kidney Disease Predictor</h1></center>
+                    <div class="card card-body" style="border: 1px solid black;">
+                        <form class="form-horizontal" action="/prediction" method="POST">
+                            <div class="row my-4">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <input style="border: 1px solid black;" class="form-control" type="text" name="bgr" placeholder="Blood Glucose">
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mx-0">
+                                    <div class="form-group">
+                                        <input style="border: 1px solid black;" class="form-control" type="text" name="bu" placeholder="Blood Urea">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <input style="border: 1px solid black;" class="form-control" type="text" name="sc" placeholder="Serum Creatinine">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row my-4">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input style="border: 1px solid black;" class="form-control" type="text" name="pcv" placeholder="Pcv">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input style="border: 1px solid black;" class="form-control" type="text" name="wbcc" placeholder="WBC Count">
+                                    </div>
+                                </div>
+                                <!-- <div class="col-md-4">
+                                    <div class="form-group">
+                                        <input style="border: 1px solid black;" class="form-control" type="text" name="rbc" placeholder="pc">
+                                    </div>
+                                </div> -->
+                            </div>
+                            <!-- <div class="row my-4">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <input style="border: 1px solid black;" class="form-control" type="text" name="pc" placeholder="pcc">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <input style="border: 1px solid black;" class="form-control" type="text" name="pcc" placeholder="ba">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <input style="border: 1px solid black;" class="form-control" type="text" name="ba" placeholder="bgr">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row my-4">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <input style="border: 1px solid black;" class="form-control" type="text" name="bgr" placeholder="bu">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <input style="border: 1px solid black;" class="form-control" type="text" name="bu" placeholder="sc">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <input style="border: 1px solid black;" class="form-control" type="text" name="sc" placeholder="pot">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row my-4">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <input style="border: 1px solid black;" class="form-control" type="text" name="sod" placeholder="wc">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <input style="border: 1px solid black;" class="form-control" type="text" name="pot" placeholder="htn">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <input style="border: 1px solid black;" class="form-control" type="text" name="hemo" placeholder="dm">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row my-4">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <input style="border: 1px solid black;" class="form-control" type="text" name="pcv" placeholder="wc">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <input style="border: 1px solid black;" class="form-control" type="text" name="wbcc" placeholder="htn">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <input style="border: 1px solid black;" class="form-control" type="text" name="rbcc" placeholder="dm">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row my-4">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <input style="border: 1px solid black;" class="form-control" type="text" name="htn" placeholder="wc">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <input style="border: 1px solid black;" class="form-control" type="text" name="dm" placeholder="htn">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <input style="border: 1px solid black;" class="form-control" type="text" name="cad" placeholder="dm">
+                                    </div>
+                                </div>
+                            </div> -->
+                            <!-- <div class="row my-4">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <input style="border: 1px solid black;" class="form-control" type="text" name="appet" placeholder="cad">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <input style="border: 1px solid black;" class="form-control" type="text" name="pe" placeholder="pe">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <input style="border: 1px solid black;" class="form-control" type="text" name="ane" placeholder="ane">
+                                    </div>
+                                </div>
+                            </div> -->
+                            <div class="row">
+                                <input type="submit" class="btn btn-danger btn-block"  value="Predict">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-1"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
