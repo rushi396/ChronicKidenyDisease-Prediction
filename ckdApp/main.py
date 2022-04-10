@@ -10,21 +10,23 @@ app = Flask(__name__,template_folder='templates')
 
 
 def predict(values):
-    print("hel")
     if len(values) == 5:
         model = joblib.load('./model/ckd.pkl')
-        print(model)
+        scaler = joblib.load('./model/scaler.bin')
+       # print(model)
         values = np.asarray(values)
-        print("values",values)
-        print(values.shape)
-        #df = pd.DataFrame(values.reshape(-1,len(values)), columns = ['age','bp','sg','al','su','rbc','pc','pcc','ba','bgr', 'bu', 'sc', 'sod', 'pot','hemo','pcv','wbcc','rbcc','htn','dm','cad','appet','pe','ane'])
-        df = pd.DataFrame(values.reshape(-1,len(values)), columns = ['bgr','bu','sc','pcv','wbcc'])
+        #print("values",values)
+        #print(values.shape)
+        values = pd.DataFrame(values.reshape(-1,5), columns = ['hemo', 'pcv', 'sc', 'sg', 'rbcc'])
         #print(df[0:1])
+        values = scaler.transform(values)
+        df = pd.DataFrame(values.reshape(-1,5), columns = ['hemo', 'pcv', 'sc', 'sg', 'rbcc'])
+       # print(values)
         val = model.predict(df)
-        print("val",val[0])
+        #print("val",val)
         val = val[0]
         return val
-
+#17.10	41.0	0.80	1.020	5.2
 @app.route('/')
 def main():
     return render_template('index.html')
@@ -40,10 +42,11 @@ def predict_ckd():
     try:
         if request.method == 'POST':
             to_predict_dict = request.form.to_dict()
-            print(to_predict_dict)
+            #print(to_predict_dict)
             to_predict_list = list(map(float, list(to_predict_dict.values())))
-            print(to_predict_list)
+            #print(to_predict_list)
             pred = predict(to_predict_list)
+            #print(pred)
             return render_template("pred.html", pred = pred)
 
     except:
