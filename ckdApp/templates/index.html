@@ -14,7 +14,7 @@
     <!-- Nvabar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
         <div class="container-fluid">
-          <a class="navbar-brand" href="/prediction">Chronic Kidney Disease Prediction</a>
+          <a class="navbar-brand" href="/">Chronic Kidney Disease Prediction</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -35,7 +35,18 @@
       
     <!-- content -->
     {% block content %}
-
+    <div class="container">
+      <div class="row mx-5">
+        <div class="card" style="height: 80vh;color: azure;background:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../static/img/kd2.jpeg');;background-repeat: no-repeat;background-size: 100% 100%;">
+          <div class="card-body">
+            <h5 class="card-title text-center text-capitalize my-5" style="font-size: 2em;"><strong>Chronic kidney Disease Predicton System</strong></h5>
+            <p class="card-text text-center my-5" style="font-size: 1.2em;">By using this system you can check if you have kidney disease or not.</p>
+            <a href="/prediction" class="btn btn-danger position-absolute bottom-0 end-0 mb-4 me-5" style="float: right;">For prediction</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    
     {% endblock %}
     <script src="../static/script.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>  
