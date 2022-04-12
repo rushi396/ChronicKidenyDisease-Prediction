@@ -10,7 +10,7 @@
             <div class="card-body">
                 <h5 class="card-title text-center" style="font-size: 1.5em;font-family: 'Bebas Neue', cursive;">Chronic Kidney Disease Prediction Report</h5>
                 {% if pred == 0 %}
-                    <h5 class="card-title my-5" style="font-size: 1.7em; font-family: 'Bebas Neue', cursive;">You have a kidney disease!</h5>
+                    <h5 class="card-title my-5" style="font-size: 1.7em; font-family: 'Bebas Neue', cursive;">Kidney Disease Detected!</h5>
                     <h5 class="card-title my-5" style="font-size: 1.7em; font-family: 'Bebas Neue', cursive;">CKD-EPI creatinine equation : GFR is {{forgfr}}</h5>
                     <h5 class="card-title my-5" style="font-size: 1.7em; font-family: 'Bebas Neue', cursive;">{{stage}}</h5>
 
@@ -22,7 +22,7 @@
                 {% endif %}
 
                 {% if pred == 1 %}
-                    <h5 class="card-title my-5" style="font-size: 1.7em;font-family: 'Bebas Neue', cursive;">You don't have a kidney disease!</h5>
+                    <h5 class="card-title my-5" style="font-size: 1.7em;font-family: 'Bebas Neue', cursive;">Kidney Disease Not Detected!</h5>
                     <h5 class="card-title my-5" style="font-size: 1.7em; font-family: 'Bebas Neue', cursive;">CKD-EPI creatinine equation : GFR is {{forgfr}}</h5>
                     <h5 class="card-title my-5" style="font-size: 1.7em; font-family: 'Bebas Neue', cursive;">{{stage}}</h5>
 
